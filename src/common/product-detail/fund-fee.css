@@ -1,0 +1,51 @@
+@charset "utf-8";
+/*交易费率css*/
+div.product-feilv {
+  text-align: left;
+  padding: 0 .5rem .5rem;
+  font-size: .6rem;
+}
+.feilv-ms{
+  /*border-left:.05rem solid #d8d8d8;*/
+  border-top: .05rem #ebebeb solid;
+  padding-top: .5rem;
+  line-height:1rem;
+  color: #C5C39C;
+  font-size:0.6rem;
+}
+.feilv {
+  /*border-left:.05rem solid #d8d8d8;*/
+  /*border-right:.05rem solid #d8d8d8;*/
+  width:100%;
+  overflow:hidden;
+  text-align: left;
+  line-height:1rem;
+  padding-top:0.2rem;
+  padding-bottom: 0.3rem;
+}
+.feilv.first {
+  border-top: .05rem #ebebeb solid;
+  padding-top: .5rem;
+}
+.feilv .feilv-t{
+  float:left;
+  width:25%;
+  color:#797979;
+  font-size:0.7rem;
+}
+.feilv .feilv-l{
+  float:left;
+  width:50%;
+  color:#000000;
+  font-size:0.7rem;
+}
+.feilv .feilv-l span{
+  color:#797979;
+  font-size:0.6rem;
+}
+.feilv .feilv-z{
+  float:left;
+  width:25%;
+  color:#000000;
+  font-size:0.7rem;
+}

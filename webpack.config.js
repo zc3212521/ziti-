@@ -5,36 +5,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
-        "square":"./src/square/square.js"
-        ,"person": "./src/person/person.js"
-        ,"person-khqrcode": "./src/person-khqrcode/person-khqrcode.js"
-        ,"person-wdqrcode": "./src/person-wdqrcode/person-wdqrcode.js"
-        ,"shop": "./src/shop/shop.js"
-        ,"index-weidian": "./src/index-weidian/index-weidian.js"
-        ,"product-tuijian": "./src/product-tuijian/product-tuijian.js"
-        ,"follow": "./src/follow/follow.js"
-        ,"product-licai-dingqiLicaiDetail":"./src/product-licai-dingqiLicaiDetail/product-licai-dingqiLicaiDetail.js"
-        ,"product-licai-noHuobiJijinDetail":"./src/product-licai-noHuobiJijinDetail/product-licai-noHuobiJijinDetail.js"
-        ,"product-licai-huobiJijinDetail":"./src/product-licai-huobiJijinDetail/product-licai-huobiJijinDetail.js"
-        ,"quanshangziguan-productnoticedetail":"./src/quanshangziguan-productnoticedetail/quanshangziguan-productnoticedetail.js"
-        ,"quanshangziguan-wenjianlxiangguan":"./src/quanshangziguan-wenjianlxiangguan/quanshangziguan-wenjianlxiangguan.js"
-        ,"noexists":"./src/noexists/noexists.js"
-        ,"weixin-erweima":"./src/weixin-erweima/weixin-erweima.js"
-        ,"viewpoint-detail":"./src/vp-detail/viewpoint-detail.js"
-        ,"viewpoint-detail-audio":"./src/vp-detail-audio/viewpoint-detail-audio.js"
-        ,"viewpoint-detail-video":"./src/vp-detail-video/viewpoint-detail-video.js"
-        ,"pub-all":"./src/pub-all/pub-all.js"
-        ,"branch-shop":"./src/branch-shop/branch-shop.js"
-        ,"search":"./src/search/search.js"
-        ,"shopold":"./src/shopold/shopold.js"
-        ,"publish-viewlist":"./src/publish-viewlist/publish-viewlist.js"
-        ,"activity":"./src/activity/activity.js"
-        ,"lottery-index":"./src/activity/lottery-index.js"
-        ,"lottery-his":"./src/activity/lottery-his.js"
-        ,"lottery-share":"./src/activity/lottery-share.js"
-        ,"chatroom":"./src/chatroom/chatroom.js"
-        ,"editor":"./src/editor/editor.js"
-        ,"chatroom-list":"./src/chatroom-list/chatroom-list.js"
+        "myShop":"./src/myShop/myShop.js"
     },
     output: {
         path: path.join(__dirname, "./debug"),

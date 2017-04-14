@@ -1,0 +1,37 @@
+.confirm-box{
+}
+
+.confirm-content{
+    padding: .7rem 1rem;
+    text-align: center;
+    font-size: .7rem;
+    min-width: 7rem;
+}
+
+.confirm-bottom{
+    border-top: .05rem #ccc solid;
+}
+
+.confirm-ok{
+    float: left;
+    width: 50%;
+    color: #b9002c;
+    font-size: .8rem;
+    line-height: 2rem;
+    height: 2rem;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-right: .05rem #ccc solid;
+}
+
+.confirm-cancel{
+    float: right;
+    width: 50%;
+    color: #999;
+    font-size: .8rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: center;
+}

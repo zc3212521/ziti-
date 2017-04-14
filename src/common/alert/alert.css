@@ -1,0 +1,21 @@
+.alert-box{
+}
+
+.alert-content{
+    padding: .7rem 1rem;
+    text-align: center;
+    font-size: .7rem;
+}
+
+.alert-bottom{
+    line-height: 2rem;
+    height: 2rem;
+    text-align: center;
+    border-top: .05rem #ccc solid;
+}
+
+.alert-ok{
+    color: #b9002c;
+    font-size: .8rem;
+    padding: .3rem;
+}

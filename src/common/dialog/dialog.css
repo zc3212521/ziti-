@@ -1,0 +1,89 @@
+/**
+ * Created by lisg on 2016/3/5.
+ */
+
+.dialog {
+	width: 80%;
+	height: 25%;
+	border: .05rem solid #ddd;
+	z-index: 9999;
+	-moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px; 
+    background-color: #FFFFFF;
+  	position: fixed;
+  	text-align: center;
+  	display: none;
+}
+/**ok*/
+.dialog .oktop {
+	width: 57px;
+	height:57px;
+	background: url(assets/ok.png) no-repeat;
+	margin-left: 40%;
+	margin-top: 10%
+}
+
+.dialog .bottom {
+	margin-top: 4%;
+	font-size: .8rem;
+	color: #777777;
+}
+/**��ʾ*/
+.dialog .top {
+	height: 70%;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 1.2rem;
+	font-size: .7rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	
+}
+.dialog .top span {
+	display: inline-block;
+	height: 50%;
+}
+
+.dialog .know span {
+	display: inline-block;
+	height: 60%;
+}
+
+.dialog .know {
+	border-top: .05rem solid #ddd;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 1.2rem;
+	color: #CE4D66;
+	height: 30%;
+	font-size: .7rem;
+}
+
+.dialog .know .left {
+	width: 49%;
+	border-right: .05rem solid #ddd;
+	float: left;
+	color: #666;
+	height: 100%;
+}
+
+.dialog .know .right {
+	float: left;
+	width: 49%;
+	height: 100%;
+}
+
+#bg { 
+	display: none;
+	position: fixed;
+	top: 0%; 
+	left: 0%; 
+	right: 0%;
+	bottom: 0%;
+	background-color: black; 
+	z-index:9998; 
+	-moz-opacity: 0.7; 
+	opacity:.70; 
+	filter: alpha(opacity=70);
+}

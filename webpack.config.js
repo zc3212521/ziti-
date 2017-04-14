@@ -31,13 +31,13 @@ module.exports = {
                 helperDirs: [path.join(__dirname, "./src/common/helper")]
             }},
             //{test: /\.html$/,loader: "html?name=[name].[ext]" },
-            {test: /\.(woff|woff2|eot|svg|ttf)/,   loader: "url-loader?limit=10000&minetype=application/font-woff&name=assets/[name].[hash:8].hash_wp.[ext]" }
+            {test: /\.(woff|woff2|eot|svg|ttf)/,   loader: "url-loader?limit=10000&minetype=application/font-woff&name=assets/[name].hash_wp.[ext]" }
         ]
     },
     plugins:[
         new webpack.optimize.CommonsChunkPlugin({
             name:"vendor",
-            minChunks: 16
+//            minChunks: 16
         }),
 
         new ExtractTextPlugin("[name].css")

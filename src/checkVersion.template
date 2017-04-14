@@ -1,0 +1,130 @@
+        (function(){
+            var formatParams = function(data) {//格式化参数
+                var arr = [];
+                for (var name in data) {
+                    arr.push(encodeURIComponent(name) + '=' + encodeURIComponent(data[name]));
+                }
+                return arr.join('&');
+            }
+            var jsonpInner = function(options) {
+                options = options || {};
+                if (!options.url || !options.callback) {
+                    throw new Error("参数不合法");
+                }
+
+                //创建 script 标签并加入到页面中
+                var callbackName = ('jsonp_' + Math.random()).replace(".", "");
+                var oHead = document.getElementsByTagName('head')[0];
+                var params = "";
+                if(options.data){
+                    options.data[options.callback] = callbackName;
+                    params += formatParams(options.data);
+                }else{
+                    params+=options.callback+"="+callbackName;
+                }
+                var oS = document.createElement('script');
+                oHead.appendChild(oS);
+
+                //创建jsonp回调函数
+                window['checkVersionCallBack'] = function (json) {
+                    oHead.removeChild(oS);
+                    clearTimeout(oS.timer);
+                    window[callbackName] = null;
+                    options.success && options.success(json);
+                };
+
+                //发送请求
+                oS.src = options.url + '?' + params;
+
+                //超时处理
+                if (options.time) {
+                    oS.timer = setTimeout(function () {
+                        window[callbackName] = null;
+                        oHead.removeChild(oS);
+                        options.fail && options.fail({ message: "超时" });
+                    }, options.time);
+                }
+            };
+            window.jsonpInner = jsonpInner;
+        })();
+
+        function changeUrlArg(url, arg, val){
+            var pattern = arg+'=([^&]*)';
+            var replaceText = arg+'='+val;
+            return url.match(pattern) ? url.replace(eval('/('+ arg+'=)([^&]*)/gi'), replaceText) : (url.match('[\?]') ? url+'&'+replaceText : url+'?'+replaceText);
+        }
+
+
+        //调用方法
+        jsonpInner({
+             url:"htmlFixName/checkVersion.jsonp",
+             callback:"callback",   //跟后台协商的接收回调名
+             data:{},
+             success:function(json){
+                var clientPageMd5Name = document.getElementById('clientPageMd5Name').attributes["data-clientver"].value;
+
+               console.log(document.getElementById('clientPageMd5Name'));
+
+                var key = clientPageMd5Name.split('--');
+                if(key.length>1){
+                    key = key[0]+'.html';
+                }else{
+                    key = clientPageMd5Name;
+                }
+                var serverPageMd5Name =  json[key];
+                console.log('clientPageMd5Name:'+clientPageMd5Name);
+                console.log('serverPageMd5Name:'+serverPageMd5Name);
+                //alert('clientPageMd5Name:'+clientPageMd5Name+'  '+'serverPageMd5Name:'+serverPageMd5Name);
+                 if(clientPageMd5Name!=serverPageMd5Name){
+                     var n = window.sessionStorage.getItem(clientPageMd5Name+'-reloadNum');
+                     if(n==null){
+                     //alert(1);
+                        window.sessionStorage.setItem(clientPageMd5Name+'-reloadNum',1);
+                        n = 1;
+                     }else{
+                     //alert(2);
+                        n++;
+                        window.sessionStorage.setItem(clientPageMd5Name+'-reloadNum',n);
+                     }
+
+                     window.sessionStorage.isReload = '1';
+
+                     if(n>=3){
+                     //alert(3);
+                        var date = new Date();
+                        var month = date.getMonth() + 1;
+                        var strDate = date.getDate();
+                        if (month >= 1 && month <= 9) {
+                            month = "0" + month;
+                        }
+                        if (strDate >= 0 && strDate <= 9) {
+                            strDate = "0" + strDate;
+                        }
+                        var curTime = ''+ date.getFullYear()  + month  + strDate + date.getHours()  + date.getMinutes() + date.getSeconds()+date. getMilliseconds();
+
+                        if(window.location.href.indexOf('?')!=-1){
+                            window.location.href = changeUrlArg(window.location.href, 't', curTime);
+                        }else{
+                            var orgin_param = '';
+                            orgin_url = window.sessionStorage._navUrl;
+                            var a = orgin_url.split('?');
+                            if(a.length>1){
+                                orgin_url = a[0];
+                                orgin_param = a[1];
+                             }
+                            window.location.href = window.location.href +'?t='+ curTime+'&'+orgin_param;
+                        }
+                        return;
+                     }
+                     console.log('reload this page to get new version!!');
+                     window.location.reload(true);
+                 }else{
+                    //alert('新页面载入完毕');
+                 }
+             },
+             fail:function(){
+                console.log("checkVersionJsonpFail......");
+             },
+             time:10000
+         });
+

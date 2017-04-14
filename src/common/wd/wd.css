@@ -1,0 +1,255 @@
+.wd-row{
+    padding: .75rem .5rem .75rem 0rem;
+    margin-left: .5rem;
+    background: #FFF;
+}
+.wd-row:last-child{
+    padding: .75rem .5rem;
+    margin-left: 0rem;
+}
+
+.wd-info{
+  position: relative;
+  background: #FFF;
+    margin: 0 .25rem;
+}
+
+
+
+.wd-info .photo{
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #FFF;
+    border: 1px rgba(0,0,0,0) solid;
+}
+.wd-info .photo img{
+  width: 100%;
+  height: auto;
+}
+
+.wd-info .con{
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: static;
+  height: 2rem;
+  padding: 0 3.5rem 0 2.6rem;
+  overflow: hidden;
+}
+
+.wd-info .focus-btn{
+  position: absolute;
+  display: block;
+  right: 0rem;
+  top: 0.35rem;
+    width: 3rem;
+    height: 1.35rem;
+    line-height: 1.35rem;
+  text-align: center;
+  overflow: hidden;
+  background: #FFF;
+  color: #bf002e;
+  font-size: 0.6rem;
+  box-sizing:border-box;
+}
+
+.wd-info .focus-btn:before{
+    border-color: #bf002e;
+}
+
+
+.wd-info .focused{
+  position: absolute;
+  display: block;
+  right: 0rem;
+  top: 0.35rem;
+  width: 3rem;
+  height: 1.35rem;
+  line-height: 1.35rem;
+  text-align: center;
+  overflow: hidden;
+  background: #FFF;
+  color: #999;
+  font-size: .6rem;
+    box-sizing:border-box;
+}
+
+.wd-info .name{
+  height: 1rem;
+  line-height: 1rem;
+  font-size: .8rem;
+    overflow: hidden;
+}
+
+.wd-info .name .guan{
+    -webkit-transform: scale(.6);
+    -moz-transform: scale(.6);
+    -ms-transform: scale(.6);
+    -o-transform: scale(.6);
+    transform: scale(.6);
+}
+
+.wd-info .name-middle{
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.wd-info .notice{
+  height: 1rem;
+  line-height: 1rem;
+  font-size: .6rem;
+  color: #969696;
+  padding-left: 1rem;
+}
+.wd-info .tabParent{
+    overflow: hidden;
+    width: 100%;
+    height: 0.8rem;
+    margin-top: .2rem;
+}
+
+.wd-info .tab{
+    float: left;
+    color: #FFF;
+    background-color: #f7941d;
+    -webkit-border-radius: .1rem;
+    -moz-border-radius: .1rem;
+    border-radius: .1rem;
+    overflow: hidden;
+    height: .8rem;
+    line-height: .8rem;
+    min-width: 2.5rem;
+    margin-right: .3rem;
+    margin-bottom: .3rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+    opacity: 0.75;
+}
+
+.wd-info .tab>span{
+    display: inline-block;
+    font-size: 0.6rem;
+    -webkit-transform: scale(0.85);
+    -moz-transform: scale(0.85);
+    -ms-transform: scale(0.85);
+    -o-transform: scale(0.85);
+    transform: scale(0.85);
+    vertical-align: .15rem;
+}
+
+
+.wd-info .tab:before{
+    border: .05rem #f7941d solid;
+    border-radius:.1rem;
+}
+
+
+
+.wd-info .labels{
+  height: 1rem;
+  line-height: 1rem;
+  font-size: .6rem;
+}
+.wd-info .labels i{
+  border: #eeeeee .05rem solid;
+  padding: .1rem .5rem;
+  border-radius: .2rem;
+  color: #fabf5b;
+}
+
+.wd-info-btm{
+  height:1rem;
+    padding: 1rem 0 0 2.6rem;
+    margin: 0 .25rem;
+}
+
+.wd-info-btm .col2{
+  float: left;
+  width: 50%;
+  text-align: center;
+  font-size: .6rem;
+  box-sizing: border-box;
+}
+.wd-info-btm .col3{
+  float: left;
+    padding-right: 1.6rem;
+  font-size: .6rem;
+  box-sizing: border-box;
+}
+
+.wd-info-btm .col3:last-child{
+    padding-right: 0;
+}
+
+.wd-info-pub{
+    display: block;
+    line-height:2rem;
+    height:2rem;
+    margin-top: .7rem;
+    background-color: #f9f9f9;
+    border-radius: .2rem;
+}
+.wd-info-pub .pub-title{
+  float: left;
+  max-width: 65%;
+  padding-left:2.75rem;
+  font-size: .6rem;
+  box-sizing: border-box;
+    color: #333;
+}
+.wd-info-pub .pub-title:before{
+    content: "观点";
+    float: left;
+    width: 2rem;
+    height: 1rem;
+    line-height: 1rem;
+    padding-right: .5rem;
+    font-size: .6rem;
+    margin-left: -3rem;
+    margin-top: .5rem;
+    text-align: right;
+    overflow: hidden;
+    color: #FF801A;
+    opacity: .7;
+    border-right: .05rem #DDD solid;
+    font-weight: bold;
+}
+
+.wd-info-pub .pub-time{
+  float: left;
+  width: 4rem;
+  font-size: .6rem;
+    color: #999;
+  box-sizing: border-box;
+    padding-left: .5rem;
+}
+.wuxing{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: .3rem;
+  width: 3rem;
+  height: .6rem;
+  overflow: hidden;
+  background:url('assets/pro-star.png') no-repeat;
+  background-size:100%;
+  background-position: 0 -0.6rem;
+  float: left;
+
+}
+
+.wuxing .star{
+  float: left;
+  width: 0rem;
+  height: .6rem;
+  overflow: hidden;
+  background:url('assets/pro-star.png');
+  background-size:3rem  1.183rem;
+}

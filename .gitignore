@@ -1,0 +1,9 @@
+.DS_Store
+debug
+release
+node_modules
+*.iml
+.svn
+thumbs.db
+.idea
+
